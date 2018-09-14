@@ -239,21 +239,6 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="ModeloMiBar.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ModeloMiBar.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="ModeloMiBar.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ModeloMiBar.tt</DependentUpon>
-    </Compile>
-    <Compile Include="ModeloMiBar.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ModeloMiBar.edmx</DependentUpon>
-    </Compile>
     <Compile Include="Models\AccountBindingModels.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -273,16 +258,6 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Login.html" />
-    <Content Include="ModeloMiBar.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>ModeloMiBar.edmx</DependentUpon>
-      <LastGenOutput>ModeloMiBar.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="ModeloMiBar.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>ModeloMiBar.edmx</DependentUpon>
-      <LastGenOutput>ModeloMiBar.cs</LastGenOutput>
-    </Content>
     <Content Include="Registrar.html" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -307,13 +282,6 @@
     <Content Include="Areas\HelpPage\Views\Help\Api.cshtml" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <EntityDeploy Include="ModeloMiBar.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>ModeloMiBar.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="ModeloMiBar.edmx.diagram">
-      <DependentUpon>ModeloMiBar.edmx</DependentUpon>
     </Content>
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
@@ -375,6 +343,12 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MiBarAccessData\MiBarAccessData.csproj">
+      <Project>{95b15281-3b02-4158-a930-6cad3b5626b4}</Project>
+      <Name>MiBarAccessData</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
