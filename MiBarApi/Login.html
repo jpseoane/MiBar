@@ -20,7 +20,9 @@
                 <tbody>
                     <tr>
                         <td>Usuario</td>
-                        <td><input type="text" id="txtUsuario" placeholder="Usuario" /> </td>
+                        <td><input type="text" id="txtUsuario" 
+                                   placeholder="Usuario" /> 
+                        </td>
                     </tr>
                     <tr>
                         <td>Password</td>
@@ -82,17 +84,17 @@
             // Save the new user details
             $('#btnLogin').click(function () {
                 $.ajax({
-                    url: '/token',
+                    url: '/Token',
                     method: 'POST',
                     contentType: 'application/json',
                     data: {
-                        email: $('#txtUsuario').val(),
+                        username: $('#txtUsuario').val(),
                         password: $('#txtPassword').val(),
                         grant_type: 'password'
                     },
                     success: function (response) {
-                        $('#divErrorText').text(JSON.stringify(response));
-                        $('#divError').show('fade');
+                        sessionStorage.setItem('accessToken', response.access_token);
+                        window.location.href = "Data.html";
                     },
                     error: function (jqXHR) {
                         $('#divErrorText').text(jqXHR.responseText);
