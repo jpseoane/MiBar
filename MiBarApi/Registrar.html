@@ -38,8 +38,8 @@
                     </tr>
                     <tr class="success">
                         <td colspan="2">
-                            <input id="btnRegister" class="btn btn-success"
-                                   type="button" value="Register" />
+                            <input id="btnRegistrar" class="btn btn-success"
+                                   type="button" value="Registrar" />
 
                             <a class="btn btn-success pull-right" href="Login.html">Login</a>
 
@@ -90,7 +90,7 @@
             });
 
             // Save the new user details
-            $('#btnRegister').click(function () {
+            $('#btnRegistrar').click(function () {
                 $.ajax({
                     url: '/api/account/register',
                     method: 'POST',
