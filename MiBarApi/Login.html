@@ -64,17 +64,18 @@
     </div>
 
 
-
-    <script src="Scripts/jquery-3.3.1.js"></script>
     <script src="Scripts/bootstrap.min.js"></script>
+    <script src="Scripts/jquery-3.3.1.js"></script>
+    <script src="Scripts/GoogleAuthentication.js"></script>
+
+
     <script type="text/javascript">
         $(document).ready(function () {
+            getAccessToken();
 
             $('#btnGoogleLogin').click(function () {
-                window.location.href = "/api/Account/ExternalLogin?provider=Google&response_type=token&client_id=self&redirect_uri=http%3A%2F%2Flocalhost%3A6003%2FLogin.html&state=7M6ukv7RFa7Ayih50OZIqHDvryGK2ab8NPkH2s9MCc01";
-
+                window.location.href = "/api/Account/ExternalLogin?provider=Google&response_type=token&client_id=self&redirect_uri=http%3A%2F%2Flocalhost%3A2700%2FLogin.html&state=7M6ukv7RFa7Ayih50OZIqHDvryGK2ab8NPkH2s9MCc01";
             });
-
 
             //Close the bootstrap alert
             $('#linkClose').click(function () {
