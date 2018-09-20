@@ -59,11 +59,11 @@ namespace MiBarApi
             //    appId: "",
             //    appSecret: "");
 
-            //app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
-            //{
-            //    ClientId = "",
-            //    ClientSecret = ""
-            //});
+            app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
+            {
+                ClientId = "188020733885-bdb8ombkpbceqp3d1ar23a7f95qa99o8.apps.googleusercontent.com",
+                ClientSecret = "NYFcv_bkcgPg_wY1Z104A_i1"
+            });
         }
     }
 }
