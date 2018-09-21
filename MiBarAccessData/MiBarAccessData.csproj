@@ -66,6 +66,9 @@
     <Compile Include="C__MigrationHistory.cs">
       <DependentUpon>ModelMiBar.tt</DependentUpon>
     </Compile>
+    <Compile Include="Employees.cs">
+      <DependentUpon>ModelMiBar.tt</DependentUpon>
+    </Compile>
     <Compile Include="ModelMiBar.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

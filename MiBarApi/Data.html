@@ -10,6 +10,7 @@
         <div class="well">
             <input id="btnLoadEmployees" class="btn btn-success"
                    type="button" value="Load Employees" />
+            <span id="spanUsername" class="text-muted"></span>
         </div>
         <div id="divData" class="well hidden">
             <table class="table table-bordered" id="tblData">
@@ -60,9 +61,14 @@
 
     <script type="text/javascript">
         $(document).ready(function () {
-            if (sessionStorage.getItem('accessToken') == null) {
-                window.location.href = "Login.html";
-            }
+
+            //if (sessionStorage.getItem('accessToken') == null) {
+            //    $('#divErrorText').text("No trae el password creo");
+            //    $('#divError').show('fade');
+            //    //window.location.href = "Login.html";
+            //} else {
+            //    $('#spanUsername').text('Hola, ' + sessionStorage.getItem('userName'));
+            //}
 
             $('#linkClose').click(function () {
                 $('#divError').hide('fade');
@@ -74,12 +80,12 @@
 
             $('#btnLoadEmployees').click(function () {
                 $.ajax({
-                    url: '/api/employees',
+                    url: '/api/employes',
                     method: 'GET',
-                    headers: {
-                        'Authorization': 'Bearer '
-                            + sessionStorage.getItem("accessToken")
-                    },
+                    //headers: {
+                    //    'Authorization': 'Bearer '
+                    //        + sessionStorage.getItem("accessToken")
+                    //},
                     success: function (data) {
                         $('#divData').removeClass('hidden');
                         $('#tblBody').empty();
@@ -92,9 +98,7 @@
                             $('#tblData').append(row);
                         });
                     },
-                    error: function (jQXHR) {
-                        // If status code is 401, access token expired, so
-                        // redirect the user to the login page
+                    error: function (jQXHR) {                      
                         if (jQXHR.status == "401") {
                             $('#errorModal').modal('show');
                         }
