@@ -22,7 +22,7 @@ function isUserRegistered(accessToken) {
             if (response.HasRegistered) {
                 sessionStorage.setItem('accessToken', accessToken);
                 sessionStorage.setItem('userName', response.Email);
-                window.location.href = 'Data.html';
+                window.location.href = 'http://localhost:4143/Default';
             }
             else {
                 signupExternalUser(accessToken);

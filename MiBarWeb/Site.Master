@@ -34,7 +34,7 @@
                 <asp:ScriptReference Name="TreeView.js" Assembly="System.Web" Path="~/Scripts/WebForms/TreeView.js" />
                 <asp:ScriptReference Name="WebParts.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebParts.js" />
                 <asp:ScriptReference Name="Focus.js" Assembly="System.Web" Path="~/Scripts/WebForms/Focus.js" />
-                <asp:ScriptReference Name="WebFormsBundle" />
+                <asp:ScriptReference Name="WebFormsBundle" />                
                 <%--Site Scripts--%>
             </Scripts>
         </asp:ScriptManager>
@@ -48,6 +48,7 @@
                         <span class="icon-bar"></span>
                     </button>
                     <a class="navbar-brand" runat="server" href="~/">Nombre de la aplicación</a>
+                    <span id="spanUsername" runat="server" class="text-muted">asdfdsdsfsdfdsfsdfdsfdfsdf</span>
                 </div>
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
@@ -67,6 +68,20 @@
             </footer>
         </div>
 
+        
     </form>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            if (sessionStorage.getItem('accessToken') == null) {
+                $('#divErrorText').text("No trae el password creo");
+                $('#divError').show('fade');
+                //window.location.href = "Login.html";
+            } else {
+                $('#spanUsername').text('Hola, ' + sessionStorage.getItem('userName'));
+            }
+        });
+    </script>
 </body>
+
+     
 </html>

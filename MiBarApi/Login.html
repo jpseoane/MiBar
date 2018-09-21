@@ -96,7 +96,7 @@
                     success: function (response) {
                         sessionStorage.setItem('accessToken', response.access_token);
                         sessionStorage.setItem('userName', response.userName);
-                        window.location.href = "Data.html";
+                        window.location.href = "http://localhost:4143/Default";
                     },
                     error: function (jqXHR) {
                         $('#divErrorText').text(jqXHR.responseText);

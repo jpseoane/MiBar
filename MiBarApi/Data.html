@@ -11,6 +11,9 @@
             <input id="btnLoadEmployees" class="btn btn-success"
                    type="button" value="Load Employees" />
             <span id="spanUsername" class="text-muted"></span>
+            
+            <input id="btnLogoff" class="btn btn-success pull-right"
+                   type="button" value="Salir" />
         </div>
         <div id="divData" class="well hidden">
             <table class="table table-bordered" id="tblData">
@@ -62,13 +65,19 @@
     <script type="text/javascript">
         $(document).ready(function () {
 
-            //if (sessionStorage.getItem('accessToken') == null) {
-            //    $('#divErrorText').text("No trae el password creo");
-            //    $('#divError').show('fade');
-            //    //window.location.href = "Login.html";
-            //} else {
-            //    $('#spanUsername').text('Hola, ' + sessionStorage.getItem('userName'));
-            //}
+            if (sessionStorage.getItem('accessToken') == null) {
+                $('#divErrorText').text("No trae el password creo");
+                $('#divError').show('fade');
+                //window.location.href = "Login.html";
+            } else {
+                $('#spanUsername').text('Hola, ' + sessionStorage.getItem('userName'));
+            }
+
+            $('#btnLogoff').click(function () {
+                sessionStorage.removeItem('accessToken');
+                window.location.href = "Login.html";
+            });
+
 
             $('#linkClose').click(function () {
                 $('#divError').hide('fade');
@@ -82,10 +91,10 @@
                 $.ajax({
                     url: '/api/employes',
                     method: 'GET',
-                    //headers: {
-                    //    'Authorization': 'Bearer '
-                    //        + sessionStorage.getItem("accessToken")
-                    //},
+                    headers: {
+                        'Authorization': 'Bearer '
+                            + sessionStorage.getItem("accessToken")
+                    },
                     success: function (data) {
                         $('#divData').removeClass('hidden');
                         $('#tblBody').empty();
