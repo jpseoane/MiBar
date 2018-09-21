@@ -32,7 +32,6 @@ function isUserRegistered(accessToken) {
     });
 }
 
-
 function signupExternalUser(accessToken) {
     $.ajax({
         url: '/api/Account/RegisterExternal',
