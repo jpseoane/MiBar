@@ -12,9 +12,9 @@ namespace MiBarWeb
         protected void Page_Load(object sender, EventArgs e)
         {
 
-            spanUsername.InnerText= Session["userName"].ToString();
+            //spanUsername.InnerText= Session["userName"].ToString();
 
-            spanUsername.InnerText = "";
+            //spanUsername.InnerText = "";
         }
     }
 }

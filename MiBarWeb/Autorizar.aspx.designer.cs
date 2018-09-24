@@ -10,15 +10,15 @@
 namespace MiBarWeb {
     
     
-    public partial class _Default {
+    public partial class Autorizar {
         
         /// <summary>
-        /// Control TextoHttp.
+        /// Control form1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl TextoHttp;
+        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
     }
 }

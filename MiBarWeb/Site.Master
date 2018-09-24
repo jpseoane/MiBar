@@ -47,8 +47,8 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" runat="server" href="~/">Nombre de la aplicación</a>
-                    <span id="spanUsername" runat="server" class="text-muted">asdfdsdsfsdfdsfsdfdsfdfsdf</span>
+                    <a class="navbar-brand" runat="server" href="~/">MiBar</a>
+                    <span id="spanUsername" runat="server" class="text-muted"></span>
                 </div>
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
@@ -78,6 +78,7 @@
                 //window.location.href = "Login.html";
             } else {
                 $('#spanUsername').text('Hola, ' + sessionStorage.getItem('userName'));
+                $('#spanUsername').text('Hola, ' + localStorage.getItem('userName'));
             }
         });
     </script>

@@ -20,6 +20,8 @@ function isUserRegistered(accessToken) {
         },
         success: function (response) {
             if (response.HasRegistered) {
+                localStorage.setItem('accessToken', accessToken)
+                localStorage.setItem('userName', response.Email)
                 sessionStorage.setItem('accessToken', accessToken);
                 sessionStorage.setItem('userName', response.Email);
                 window.location.href = 'http://localhost:4143/Default';

@@ -12,6 +12,12 @@ namespace MiBarWeb
         protected void Page_Load(object sender, EventArgs e)
         {
 
+
+            string nombreUsuario = " ";
+
+            nombreUsuario = Session["userName"].ToString();
+
+            TextoHttp.InnerText= Session["userName"].ToString();
             
 
         }
