@@ -44,6 +44,17 @@ namespace WebFormsConOAuthNemiro
             );
 
 
+            OAuthManager.RegisterClient
+            (
+               "facebook",
+               "1978055228883879",
+               "7c47ef27b3c51327b7a0983e03a187c6"
+            );
+
+            // identificador de aplicacion 1978055228883879
+            //Clave secreta de aplicacion 7c47ef27b3c51327b7a0983e03a187c6
+
+
         }
     }
 }
