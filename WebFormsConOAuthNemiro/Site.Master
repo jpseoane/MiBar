@@ -7,7 +7,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title><%: Page.Title %> - Mi aplicación ASP.NET</title>
+    <title><%: Page.Title %> - MiBar</title>
 
     <asp:PlaceHolder runat="server">
         <%: Scripts.Render("~/bundles/modernizr") %>
@@ -47,7 +47,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" runat="server" href="~/">Nombre de la aplicación</a>
+                    <a class="navbar-brand" runat="server" href="~/">MiBar</a>                    
                 </div>
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
@@ -56,22 +56,27 @@
                         <li><a runat="server" href="~/Contact">Contacto</a></li>
                     </ul>                   
                 </div>
-                <div class="navbar-header ">
-                 <asp:LinkButton ID="lnkFacebook" runat="server" data-provider="yahoo" 
-                    Text="Login with Yahoo!" onclick="RedirectToLogin_Click" /><br />
-                    <asp:LinkButton ID="lnkTwitter" runat="server" data-provider="twitter" 
-                    Text="Login with Twitter" onclick="RedirectToLogin_Click" /><br />
-                    <asp:LinkButton ID="lnkGoogle" runat="server" data-provider="google" 
-                    Text="Login with Google" onclick="RedirectToLogin_Click" />
+
+                <div  class="navbar-collapse collapse">
+                   <ul class="nav navbar-nav">
+                    <li><asp:LinkButton ID="lnkFacebook" runat="server" data-provider="yahoo" 
+                    Text="Yahoo!" onclick="RedirectToLogin_Click" /></li>
+                    <li><asp:LinkButton ID="lnkTwitter" runat="server" data-provider="twitter" 
+                    Text="Twitter" onclick="RedirectToLogin_Click" /></li>
+                    <li><asp:LinkButton ID="lnkGoogle" runat="server" data-provider="google" 
+                    Text="Google" onclick="RedirectToLogin_Click" /></li>
+                   </ul>
                 </div>
             </div>
         </div>
+
+        
         <div class="container body-content">
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
             </asp:ContentPlaceHolder>
             <hr />
             <footer>
-                <p>&copy; <%: DateTime.Now.Year %> - Mi aplicación ASP.NET</p>
+                <p>&copy; <%: DateTime.Now.Year %> Azo Sytems - MiBar</p>
             </footer>
         </div>
 

@@ -12,7 +12,19 @@ namespace WebFormsConOAuthNemiro
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Page.IsPostBack) {
+                var result = OAuthWeb.VerifyAuthorization();
 
+                if (result.IsSuccessfully)
+                {
+                
+                }
+                //else
+                //{
+                //    // error
+                //    Response.Write(result.ErrorInfo.Message);
+                //}
+            }
         }
 
 
@@ -22,6 +34,7 @@ namespace WebFormsConOAuthNemiro
             string provider = ((LinkButton)sender).Attributes["data-provider"];
             // build the return address
             string returnUrl = new Uri(Request.Url, "ExternalLoginResult.aspx").AbsoluteUri;
+            //
             // redirect user into external site for authorization
             OAuthWeb.RedirectToAuthorization(provider, returnUrl);
         }
